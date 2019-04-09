@@ -244,8 +244,8 @@ Write-Output "Checking to see if any Whitelisted Apps were removed, and if so re
 FixWhitelistedApps
 Write-Output "Stopping telemetry, disabling unneccessary scheduled tasks, and preventing bloatware from returning."
 Protect-Privacy
-Write-Output "Stopping Edge from taking over as the default PDF Viewer."
-Stop-EdgePDF
+#Write-Output "Stopping Edge from taking over as the default PDF Viewer."
+#Stop-EdgePDF
 CheckDMWService
 CheckInstallService
 Write-Output "Finished all tasks."
