@@ -186,7 +186,7 @@ $RemoveBlacklist.Add_Click( {
                 "Microsoft.NetworkSpeedTest"
                 "Microsoft.News"
                 "Microsoft.Office.Lens"
-                "Microsoft.Office.OneNote"
+                #"Microsoft.Office.OneNote"
                 "Microsoft.Office.Sway"
                 "Microsoft.OneConnect"
                 "Microsoft.People"
@@ -196,12 +196,12 @@ $RemoveBlacklist.Add_Click( {
                 "Microsoft.StorePurchaseApp"
                 "Microsoft.Office.Todo.List"
                 "Microsoft.Whiteboard"
-                "Microsoft.WindowsAlarms"
+                #"Microsoft.WindowsAlarms"
                 #"Microsoft.WindowsCamera"
                 "microsoft.windowscommunicationsapps"
                 "Microsoft.WindowsFeedbackHub"
                 "Microsoft.WindowsMaps"
-                "Microsoft.WindowsSoundRecorder"
+                #"Microsoft.WindowsSoundRecorder"
                 "Microsoft.Xbox.TCUI"
                 "Microsoft.XboxApp"
                 "Microsoft.XboxGameOverlay"
@@ -230,14 +230,14 @@ $RemoveBlacklist.Add_Click( {
                 "*Windows.CBSPreview*"
                 
                 #Optional: Typically not removed but you can if you need to for some reason
-                #"*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
-                #"*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
-                #"*Microsoft.BingWeather*"
+                "*Microsoft.Advertising.Xaml_10.1712.5.0_x64__8wekyb3d8bbwe*"
+                "*Microsoft.Advertising.Xaml_10.1712.5.0_x86__8wekyb3d8bbwe*"
+                "*Microsoft.BingWeather*"
                 #"*Microsoft.MSPaint*"
                 #"*Microsoft.MicrosoftStickyNotes*"
                 #"*Microsoft.Windows.Photos*"
                 #"*Microsoft.WindowsCalculator*"
-                #"*Microsoft.WindowsStore*"
+                "*Microsoft.WindowsStore*"
             )
             foreach ($Bloat in $Bloatware) {
                 Get-AppxPackage -Name $Bloat| Remove-AppxPackage
@@ -292,9 +292,9 @@ $RemoveAllBloatware.Add_Click( {
         Function DebloatAll {
             #Removes AppxPackages
             #Credit to /u/GavinEke for a modified version of my whitelist code
-            $WhitelistedApps = 'Microsoft.ScreenSketch|Microsoft.Paint3D|Microsoft.WindowsCalculator|Microsoft.WindowsStore|Microsoft.Windows.Photos|CanonicalGroupLimited.UbuntuonWindows|`
-            Microsoft.XboxGameCallableUI|Microsoft.XboxGamingOverlay|Microsoft.Xbox.TCUI|Microsoft.XboxGamingOverlay|Microsoft.XboxIdentityProvider|Microsoft.MicrosoftStickyNotes|Microsoft.MSPaint|Microsoft.WindowsCamera|.NET|Framework|`
-            Microsoft.HEIFImageExtension|Microsoft.ScreenSketch|Microsoft.StorePurchaseApp|Microsoft.VP9VideoExtensions|Microsoft.WebMediaExtensions|Microsoft.WebpImageExtension|Microsoft.DesktopAppInstaller|WindSynthBerry|MIDIBerry|Slack'
+            $WhitelistedApps = 'Microsoft.ScreenSketch|Microsoft.Paint3D|Microsoft.WindowsCalculator|Microsoft.Windows.Photos|CanonicalGroupLimited.UbuntuonWindows|`
+            Microsoft.MicrosoftStickyNotes|Microsoft.MSPaint|Microsoft.WindowsCamera|.NET|Framework|`
+            Microsoft.HEIFImageExtension|Microsoft.ScreenSketch|Microsoft.VP9VideoExtensions|Microsoft.WebMediaExtensions|Microsoft.WebpImageExtension|Microsoft.DesktopAppInstaller|WindSynthBerry|MIDIBerry|Slack'
             #NonRemovable Apps that where getting attempted and the system would reject the uninstall, speeds up debloat and prevents 'initalizing' overlay when removing apps
             $NonRemovable = '1527c705-839a-4832-9118-54d4Bd6a0c89|c5e2524a-ea46-4f67-841f-6a9465d9d515|E2A4F912-2574-4A75-9BB0-0D023378592B|F46D4000-FD22-4DB4-AC8E-4E1DDDE828FE|InputApp|Microsoft.AAD.BrokerPlugin|Microsoft.AccountsControl|`
             Microsoft.BioEnrollment|Microsoft.CredDialogHost|Microsoft.ECApp|Microsoft.LockApp|Microsoft.MicrosoftEdgeDevToolsClient|Microsoft.MicrosoftEdge|Microsoft.PPIProjection|Microsoft.Win32WebViewHost|Microsoft.Windows.Apprep.ChxApp|`
